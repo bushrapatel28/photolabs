@@ -24,6 +24,7 @@ const App = () => {
   const photoList = photos.map((photoData, index) => {
     return (
       <PhotoListItem key={photoData.id + index} photoData={photoData}/>
+      
     )
   });
 
