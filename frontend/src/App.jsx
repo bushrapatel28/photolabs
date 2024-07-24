@@ -23,17 +23,13 @@ const App = () => {
 
   const photoList = photos.map((photoData, index) => {
     return (
-      <li key={index}>
-        <PhotoListItem photoData={photoData}/>
-      </li>
+      <PhotoListItem key={photoData.id + index} photoData={photoData}/>
     )
   });
 
   return (
     <div className="App">
-      <ul>
-        {photoList}
-      </ul>
+      {photoList}
     </div>
   );
 };
