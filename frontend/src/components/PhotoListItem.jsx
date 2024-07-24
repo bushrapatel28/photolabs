@@ -8,13 +8,13 @@ const PhotoListItem = (props) => {
   return (
     <React.Fragment>
       <div className="photo-list__item">
-        <img src={props.sampleDataForPhotoListItem.imageSource} alt="Cover-Photo" className="photo-list__image"/>
+        <img src={props.photoData.imageSource} alt="Cover-Photo" className="photo-list__image"/>
         <div className="photo-list__user-details">
-          <img src={props.sampleDataForPhotoListItem.profile} alt="Profile-Photo" className="photo-list__user-profile"/>
+          <img src={props.photoData.profile} alt="Profile-Photo" className="photo-list__user-profile"/>
           <div className="photo-list__user-info">
-            {props.sampleDataForPhotoListItem.username}
+            {props.photoData.username}
             <div className="photo-list__user-location">
-              {props.sampleDataForPhotoListItem.location.country}, {props.sampleDataForPhotoListItem.location.city}
+              {props.photoData.location.country}, {props.photoData.location.city}
             </div>
           </div>
         </div>
