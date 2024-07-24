@@ -21,7 +21,7 @@ const App = () => {
     photos[i] = sampleDataForPhotoListItem;
   }
 
-  const newPhotos = photos.map((photoData, index) => {
+  const photoList = photos.map((photoData, index) => {
     return (
       <li key={index}>
         <PhotoListItem photoData={photoData}/>
@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <ul>
-        {newPhotos}
+        {photoList}
       </ul>
     </div>
   );
