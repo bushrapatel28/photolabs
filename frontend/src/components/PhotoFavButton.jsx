@@ -7,7 +7,8 @@ function PhotoFavButton() {
   const [favorite, setFavorite] = useState(false);
 
   const handleClick = () => {
-    setFavorite(favorite ? false : true);
+    // using prevState to avoid stale state - Same as setFavorite((prev) => prev ? false : true)
+    setFavorite((favorite) => favorite ? false : true);
   }
 
   return (
