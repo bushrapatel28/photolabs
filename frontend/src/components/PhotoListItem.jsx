@@ -4,10 +4,12 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton"
 
 const PhotoListItem = (props) => {
-  const {id,
+  const {
+    id,
     location,
     urls,
-    user} = props.photoData;
+    user
+  } = props.photoData;
   /* Insert React */
   return (
     <React.Fragment>
