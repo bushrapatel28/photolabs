@@ -4,18 +4,23 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton"
 
 const PhotoListItem = (props) => {
+  const {id,
+    location,
+    urls,
+    user} = props.photoData;
   /* Insert React */
   return (
     <React.Fragment>
       <div className="photo-list__item">
         <PhotoFavButton />
-        <img src={props.photoData.imageSource} alt="Cover-Photo" className="photo-list__image"/>
+        <img src={urls.regular} alt="Cover-Photo" className="photo-list__image"/>
+        {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">
-          <img src={props.photoData.profile} alt="Profile-Photo" className="photo-list__user-profile"/>
+          <img src={user.profile} alt="Profile-Photo" className="photo-list__user-profile"/>
           <div className="photo-list__user-info">
-            {props.photoData.username}
+            {user.username}
             <div className="photo-list__user-location">
-              {props.photoData.location.country}, {props.photoData.location.city}
+              {location.country}, {location.city}
             </div>
           </div>
         </div>
