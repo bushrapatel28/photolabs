@@ -9,7 +9,7 @@ function PhotoFavButton(props) {
   const handleClick = () => {
     // using prevState to avoid stale state - Same as setFavorite((prev) => prev ? false : true)
     setFavorite((favorite) => favorite ? false : true);
-    props.toggleFavorites(props.photoId);
+    !props.favorites.includes(props.photoId) && props.toggleFavorites(props.photoId);
   }
 
 
