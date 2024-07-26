@@ -18,20 +18,21 @@ const HomeRoute = (props) => {
     }
 
     setFavorites(newFavs);
-
-
-    // setFavorites((prevFavorites) => {
-    //   return prevFavorites.includes(photoId)
-    //   ? prevFavorites.filter(id => id !== photoId)
-    //   : [...prevFavorites, photoId]
-    // })
   }
 
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigation topics={props.topics} favorites={favorites}/>
-      <PhotoList photos={props.photos} favorites={favorites} toggleFavorite={toggleFavorite}/>
+      <TopNavigation 
+        topics={props.topics} 
+        favorites={favorites}
+      />
+      <PhotoList 
+        photos={props.photos} 
+        favorites={favorites} 
+        toggleFavorite={toggleFavorite}
+        setDisplayModal={props.setDisplayModal}
+      />
     </div>
   );
 };

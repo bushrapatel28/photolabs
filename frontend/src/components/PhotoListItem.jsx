@@ -19,7 +19,12 @@ const PhotoListItem = (props) => {
           isFavorite={props.isFavorite} 
           onClick={props.toggleFavorite}
         />
-        <img src={urls.regular} alt="Cover-Photo" className="photo-list__image"/>
+        <img 
+          src={urls.regular} 
+          alt="Cover-Photo" 
+          className="photo-list__image"
+          onClick={props.setDisplayModal}
+        />
         {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">
           <img src={user.profile} alt="Profile-Photo" className="photo-list__user-profile"/>

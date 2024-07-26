@@ -4,7 +4,7 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 
-const PhotoList = ({photos, favorites, toggleFavorite}) => {
+const PhotoList = ({photos, favorites, toggleFavorite, setDisplayModal}) => {
   return (
     <ul className="photo-list">
       {/* Insert React */}
@@ -15,6 +15,7 @@ const PhotoList = ({photos, favorites, toggleFavorite}) => {
             photoData={photoData}
             isFavorite={favorites.includes(photoData.id)}
             toggleFavorite={() => toggleFavorite(photoData.id)}
+            setDisplayModal={setDisplayModal}
           />
         );
       })}
