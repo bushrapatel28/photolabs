@@ -4,23 +4,22 @@ import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
-  const [favorite, setFavorite] = useState(false);
+  // const [favorite, setFavorite] = useState(false);
 
-  const handleClick = () => {
-    // using prevState to avoid stale state - Same as setFavorite((prev) => prev ? false : true)
-    setFavorite((favorite) => favorite ? false : true);
-    !props.favorites.includes(props.photoId) && props.toggleFavorites(props.photoId);
-  }
-
+  // const handleClick = () => {
+  //   // using prevState to avoid stale state - Same as setFavorite((prev) => prev ? false : true)
+  //   // setFavorite((favorite) => favorite ? false : true);
+  //   props.onClick;
+  // }
 
   return (
     <div className="photo-list__fav-icon">
       <div 
         className="photo-list__fav-icon-svg"
-        onClick={handleClick}
+        onClick={props.onClick}
       >
         {/* Insert React */}
-        <FavIcon selected={favorite} />
+        <FavIcon selected={props.isFavorite} />
       </div>
     </div>
   );
