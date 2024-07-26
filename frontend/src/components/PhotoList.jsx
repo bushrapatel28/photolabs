@@ -4,7 +4,7 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 import photos from "mocks/photos";
 
-const PhotoList = ({photos}) => {
+const PhotoList = ({photos, isFavPhoto, favoritePhoto}) => {
   return (
     <ul className="photo-list">
       {/* Insert React */}
@@ -13,6 +13,8 @@ const PhotoList = ({photos}) => {
           <PhotoListItem 
             key={photoData.id}
             photoData={photoData}
+            isFavPhoto={isFavPhoto}
+            favoritePhoto={favoritePhoto}
           />
         );
       })}
