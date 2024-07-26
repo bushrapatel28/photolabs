@@ -1,6 +1,8 @@
 import React from 'react';
 
 // import PhotoListItem from './components/PhotoListItem';
+import topics from "mocks/topics";
+import photos from 'mocks/photos';
 import HomeRoute from 'routes/HomeRoute';
 import './App.scss';
 
@@ -19,7 +21,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute />
+      <HomeRoute topics={topics} photos={photos} />
     </div>
   );
 };
