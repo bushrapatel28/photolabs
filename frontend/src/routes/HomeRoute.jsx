@@ -5,16 +5,16 @@ import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 
 const HomeRoute = (props) => {
-  const [isFavPhoto, setIsFavPhoto] = useState(false);
-  const favoritePhoto = () => {
-    setIsFavPhoto((isFavPhoto) => isFavPhoto ? false : true);
+  const [favorites, setFavorites] = useState([]);
+  const toggleFavorites = (id) => {
+    setFavorites((favorites) => favorites = [id, ...favorites]);
   }
 
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigation topics={props.topics} isFavPhoto={isFavPhoto}/>
-      <PhotoList photos={props.photos} isFavPhoto={isFavPhoto} favoritePhoto={favoritePhoto}/>
+      <TopNavigation topics={props.topics} favorites={favorites}/>
+      <PhotoList photos={props.photos} favorites={favorites} toggleFavorites={toggleFavorites}/>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const PhotoListItem = (props) => {
   return (
     <React.Fragment>
       <div className="photo-list__item">
-        <PhotoFavButton isFavPhoto={props.isFavPhoto} favoritePhoto={props.favoritePhoto}/>
+        <PhotoFavButton photoId={id} favorites={props.favorites} toggleFavorites={props.toggleFavorites}/>
         <img src={urls.regular} alt="Cover-Photo" className="photo-list__image"/>
         {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">
