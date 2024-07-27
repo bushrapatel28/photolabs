@@ -20,8 +20,9 @@ const HomeRoute = (props) => {
     setFavorites(newFavs);
   }
 
-  const setDisplay = () => {
+  const openDisplayModal = (photoData) => {
     props.setDisplayModal(true);
+    console.log(photoData);
   }
 
   return (
@@ -35,7 +36,7 @@ const HomeRoute = (props) => {
         photos={props.photos} 
         favorites={favorites} 
         toggleFavorite={toggleFavorite}
-        setDisplay={setDisplay}
+        openDisplayModal={openDisplayModal}
       />
     </div>
   );
