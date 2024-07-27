@@ -20,6 +20,10 @@ const HomeRoute = (props) => {
     setFavorites(newFavs);
   }
 
+  const setDisplay = () => {
+    props.setDisplayModal(true);
+  }
+
   return (
     <div className="home-route">
       {/* Insert React */}
@@ -31,7 +35,7 @@ const HomeRoute = (props) => {
         photos={props.photos} 
         favorites={favorites} 
         toggleFavorite={toggleFavorite}
-        setDisplayModal={props.setDisplayModal}
+        setDisplay={setDisplay}
       />
     </div>
   );

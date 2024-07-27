@@ -23,7 +23,7 @@ const PhotoListItem = (props) => {
           src={urls.regular} 
           alt="Cover-Photo" 
           className="photo-list__image"
-          onClick={props.setDisplayModal}
+          onClick={props.onClick}
         />
         {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">
