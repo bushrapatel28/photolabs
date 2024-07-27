@@ -12,7 +12,7 @@ const App = () => {
   
   const [photoData, setPhotoData] = useState();
 
-  const fetchPhotoData = (selectedPhoto) => {
+  const setSelectedPhoto = (selectedPhoto) => {
     setPhotoData(selectedPhoto);
   }
 
@@ -22,7 +22,7 @@ const App = () => {
         topics={topics} 
         photos={photos} 
         setDisplayModal={setDisplayModal}
-        fetchPhotoData={fetchPhotoData}
+        setSelectedPhoto={setSelectedPhoto}
       />
       {displayModal && <PhotoDetailsModal closeDisplayModal={setDisplayModal} photoData={photoData}/>}
     </div>
