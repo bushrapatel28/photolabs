@@ -9,6 +9,12 @@ import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
+  
+  const [photoData, setPhotoData] = useState();
+
+  const fetchPhotoData = (selectedPhoto) => {
+    setPhotoData(selectedPhoto);
+  }
 
   return (
     <div className="App">
@@ -16,8 +22,9 @@ const App = () => {
         topics={topics} 
         photos={photos} 
         setDisplayModal={setDisplayModal}
+        fetchPhotoData={fetchPhotoData}
       />
-      {displayModal && <PhotoDetailsModal closeDisplayModal={setDisplayModal}/>}
+      {displayModal && <PhotoDetailsModal closeDisplayModal={setDisplayModal} photoData={photoData}/>}
     </div>
   );
 };

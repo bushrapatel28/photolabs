@@ -22,7 +22,7 @@ const HomeRoute = (props) => {
 
   const openDisplayModal = (photoData) => {
     props.setDisplayModal(true);
-    console.log(photoData);
+    props.fetchPhotoData(photoData);
   }
 
   return (
