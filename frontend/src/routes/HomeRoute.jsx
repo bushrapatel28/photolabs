@@ -5,35 +5,28 @@ import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 
 const HomeRoute = (props) => {
-  const [favorites, setFavorites] = useState([]);
+  const {
+    favorites, 
+    topics,
+    photos,
+    toggleFavorite,
+    setDisplayModal, 
+    selectPhoto} = props;
 
-  const toggleFavorite = (photoId) => {
-    const isFavorite = favorites.includes(photoId);
-    let newFavs = undefined;
-
-    if (isFavorite) {
-      newFavs = favorites.filter(id => id !== photoId);
-    } else {
-      newFavs = [...favorites, photoId];
-    }
-
-    setFavorites(newFavs);
-  }
-
-  const openDisplayModal = (photoData) => {
-    props.setDisplayModal(true);
-    props.setSelectedPhoto(photoData);
+  const openDisplayModal = (photoInfo) => {
+    setDisplayModal(true);
+    selectPhoto(photoInfo);
   }
 
   return (
     <div className="home-route">
       {/* Insert React */}
       <TopNavigation 
-        topics={props.topics} 
+        topics={topics} 
         favorites={favorites}
       />
       <PhotoList 
-        photos={props.photos} 
+        photos={photos} 
         favorites={favorites} 
         toggleFavorite={toggleFavorite}
         openDisplayModal={openDisplayModal}
