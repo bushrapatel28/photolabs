@@ -15,7 +15,7 @@ const PhotoList = (props) => {
             photoData={photoData}
             isFavorite={props.favorites.includes(photoData.id)}
             toggleFavorite={() => props.toggleFavorite(photoData.id)}
-            onClick={() => props.openDisplayModal(photoData)}
+            onClick={() => {props.onPhotoSelect(photoData)}}
           />
         );
       })}

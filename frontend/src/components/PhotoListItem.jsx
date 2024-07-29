@@ -13,7 +13,7 @@ const PhotoListItem = (props) => {
   /* Insert React */
   return (
     <React.Fragment>
-      <div className="photo-list__item" onClick={props.onClick}>
+      <div className="photo-list__item">
         <PhotoFavButton 
           photoId={id} 
           isFavorite={props.isFavorite} 
@@ -23,6 +23,7 @@ const PhotoListItem = (props) => {
           src={urls.regular} 
           alt="Cover-Photo" 
           className="photo-list__image"
+          onClick={props.onClick}
         />
         {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">

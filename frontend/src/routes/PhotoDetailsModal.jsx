@@ -15,11 +15,12 @@ const PhotoDetailsModal = (props) => {
 
   const similarPhotosArray = Object.values(props.photoInfo.similar_photos);
 
+
   return (
     <div className="photo-details-modal">
       <button 
         className="photo-details-modal__close-button"
-        onClick={() => props.closeDisplayModal(false)}>
+        onClick={props.onClick}>
         <img src={closeSymbol} alt="close symbol" />
       </button>
         
@@ -31,8 +32,7 @@ const PhotoDetailsModal = (props) => {
         />
         <img 
           src={urls.regular} 
-          alt="Enlarged-Photo" 
-          className='photo-details-modal__image'
+          alt="Enlarged-Photo"
         />
         <div className='photo-details-modal__top-bar'>
           <div className='photo-details-modal__photographer-details'>
@@ -53,6 +53,7 @@ const PhotoDetailsModal = (props) => {
           photos={similarPhotosArray}
           favorites={props.favorites}
           toggleFavorite={props.toggleFavorite}
+          openDisplayModal={props.openDisplayModal}
         />
       </div>
     </div>

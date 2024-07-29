@@ -10,14 +10,14 @@ const HomeRoute = (props) => {
     topics,
     photos,
     toggleFavorite,
-    setDisplayModal, 
-    selectPhoto} = props;
+    onPhotoSelect
+    } = props;
 
-  const openDisplayModal = (photoInfo) => {
-    setDisplayModal(true);
-    selectPhoto(photoInfo);
-  }
-
+  // const openDisplayModal = (photoInfo) => {
+  //   setDisplayModal(true);
+  //   onPhotoSelect(photoInfo);
+  // }
+ 
   return (
     <div className="home-route">
       {/* Insert React */}
@@ -29,7 +29,7 @@ const HomeRoute = (props) => {
         photos={photos} 
         favorites={favorites} 
         toggleFavorite={toggleFavorite}
-        openDisplayModal={openDisplayModal}
+        onPhotoSelect={onPhotoSelect}
       />
     </div>
   );
