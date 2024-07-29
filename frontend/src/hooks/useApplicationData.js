@@ -13,9 +13,9 @@ export const ACTIONS = {
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.FAV_PHOTO_ADDED: 
-      return {...state, favorites: [...state.favorites, action.payload]};
+      return {...state, favorites: action.payload};
     case ACTIONS.FAV_PHOTO_REMOVED: 
-      return {...state, favorites: state.favorites.filter(id => id !== action.payload)};
+      return {...state, favorites: action.payload};
     case ACTIONS.SET_PHOTO_DATA: 
       return {...state, photoInfo: action.payload};
     // case ACTIONS.SET_TOPIC_DATA: 
@@ -47,21 +47,17 @@ const useApplicationData = () => {
     let newFavs, type;
 
     if (isFavorite) {
-      // newFavs = state.favorites.filter(id => id !== photoId);
+      newFavs = state.favorites.filter(id => id !== photoId);
       type = ACTIONS.FAV_PHOTO_REMOVED;
     } else {
-      // newFavs = [...state.favorites, photoId];
+      newFavs = [...state.favorites, photoId];
       type = ACTIONS.FAV_PHOTO_ADDED
     }
-    dispatch({type, payload: photoId});
+    dispatch({type, payload: newFavs});
   }
 
   const onPhotoSelect = (selectedPhoto) => {   
     dispatch({type: ACTIONS.SET_PHOTO_DATA, payload: selectedPhoto});
-    openDisplayModal();
-  }
-  
-  const openDisplayModal = () => {
     dispatch({type: ACTIONS.DISPLAY_PHOTO_DETAILS});
   }
   
