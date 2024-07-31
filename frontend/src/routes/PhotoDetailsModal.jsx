@@ -11,9 +11,9 @@ const PhotoDetailsModal = (props) => {
     location,
     urls,
     user,
-  } = props.photoInfo;
+  } = props.selectedPhoto;
 
-  const similarPhotosArray = Object.values(props.photoInfo.similar_photos);
+  const similarPhotosArray = Object.values(props.selectedPhoto.similar_photos);
 
 
   return (

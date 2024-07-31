@@ -1,4 +1,5 @@
-import React, { useReducer} from 'react';
+import App from 'App';
+import React, { useReducer, useEffect } from 'react';
 
 export const ACTIONS = {
   FAV_PHOTO_ADDED: "FAV_PHOTO_ADDED",
@@ -12,19 +13,19 @@ export const ACTIONS = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.FAV_PHOTO_ADDED: 
+    case ACTIONS.FAV_PHOTO_ADDED:
       return {...state, favorites: action.payload};
-    case ACTIONS.FAV_PHOTO_REMOVED: 
+    case ACTIONS.FAV_PHOTO_REMOVED:
       return {...state, favorites: action.payload};
-    case ACTIONS.SET_PHOTO_DATA: 
-      return {...state, photoInfo: action.payload};
-    // case ACTIONS.SET_TOPIC_DATA: 
-    //   return "";
-    // case ACTIONS.SELECT_PHOTO: 
-    //   return "";
-    case ACTIONS.DISPLAY_PHOTO_DETAILS: 
+    case ACTIONS.SET_PHOTO_DATA:
+      return {...state, photoData: action.payload};
+    case ACTIONS.SET_TOPIC_DATA: 
+      return {...state, topicData: action.payload};
+    case ACTIONS.SELECT_PHOTO:
+      return {...state, selectedPhoto: action.payload};
+    case ACTIONS.DISPLAY_PHOTO_DETAILS:
       return {...state, displayModal: true};
-    case ACTIONS.CLOSE_PHOTO_DETAILS: 
+    case ACTIONS.CLOSE_PHOTO_DETAILS:
       return {...state, displayModal: false};
     default: 
       throw new Error(
@@ -34,13 +35,25 @@ function reducer(state, action) {
 }
 
 const initialState = {
-  photoInfo: null, 
+  selectedPhoto: null, 
   favorites: [], 
-  displayModal: false
+  displayModal: false,
+  photoData: [],
+  topicData: []
 }
 
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    fetch('/api/photos')
+      .then(res => res.json())
+      .then(data => dispatch({type: ACTIONS.SET_PHOTO_DATA, payload: data}));
+
+    fetch('/api/topics')
+      .then(res => res.json())
+      .then(data => dispatch({type: ACTIONS.SET_TOPIC_DATA, payload: data}));
+  }, []);
 
   const toggleFavorite = (photoId) => {
     const isFavorite = state.favorites.includes(photoId);
@@ -57,7 +70,7 @@ const useApplicationData = () => {
   }
 
   const onPhotoSelect = (selectedPhoto) => {   
-    dispatch({type: ACTIONS.SET_PHOTO_DATA, payload: selectedPhoto});
+    dispatch({type: ACTIONS.SELECT_PHOTO, payload: selectedPhoto});
     dispatch({type: ACTIONS.DISPLAY_PHOTO_DETAILS});
   }
   
