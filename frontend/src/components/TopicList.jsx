@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
 
-const TopicList = ({topics}) => {
+const TopicList = ({topics, onTopicSelect}) => {
   return (
     <div className="top-nav-bar__topic-list">
       {/* Insert React */}
@@ -11,7 +11,8 @@ const TopicList = ({topics}) => {
         return (
           <TopicListItem 
             key={topicData.id}
-            topicData={topicData}
+            title={topicData.title}
+            onClick={() => {onTopicSelect(topicData.id)}}
           />
         );
       })}

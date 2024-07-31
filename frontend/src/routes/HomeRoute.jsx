@@ -10,13 +10,9 @@ const HomeRoute = (props) => {
     topics,
     photos,
     toggleFavorite,
-    onPhotoSelect
+    onPhotoSelect,
+    onTopicSelect
     } = props;
-
-  // const openDisplayModal = (photoInfo) => {
-  //   setDisplayModal(true);
-  //   onPhotoSelect(photoInfo);
-  // }
  
   return (
     <div className="home-route">
@@ -24,6 +20,7 @@ const HomeRoute = (props) => {
       <TopNavigation 
         topics={topics} 
         favorites={favorites}
+        onTopicSelect={onTopicSelect}
       />
       <PhotoList 
         photos={photos} 

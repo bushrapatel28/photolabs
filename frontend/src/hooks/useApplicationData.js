@@ -8,7 +8,8 @@ export const ACTIONS = {
   SET_TOPIC_DATA: "SET_TOPIC_DATA",
   SELECT_PHOTO: "SELECT_PHOTO",
   DISPLAY_PHOTO_DETAILS: "DISPLAY_PHOTO_DETAILS",
-  CLOSE_PHOTO_DETAILS: "CLOSE_PHOTO_DETAILS"
+  CLOSE_PHOTO_DETAILS: "CLOSE_PHOTO_DETAILS",
+  GET_PHOTOS_BY_TOPICS: "GET_PHOTOS_BY_TOPICS"
 }
 
 function reducer(state, action) {
@@ -27,6 +28,8 @@ function reducer(state, action) {
       return {...state, displayModal: true};
     case ACTIONS.CLOSE_PHOTO_DETAILS:
       return {...state, displayModal: false};
+    case ACTIONS.GET_PHOTOS_BY_TOPICS:
+      return {...state, photoData: action.payload};
     default: 
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
@@ -73,7 +76,14 @@ const useApplicationData = () => {
     dispatch({type: ACTIONS.SELECT_PHOTO, payload: selectedPhoto});
     dispatch({type: ACTIONS.DISPLAY_PHOTO_DETAILS});
   }
+
   
+  const onTopicSelect = (topicId) => {
+    fetch(`/api/topics/photos/${topicId}`)
+      .then(res => res.json())
+      .then(data => dispatch({type: ACTIONS.GET_PHOTOS_BY_TOPICS, payload: data}))
+  }
+
   const closeDisplayModal = () => {
     dispatch({type: ACTIONS.CLOSE_PHOTO_DETAILS});
   }
@@ -82,7 +92,8 @@ const useApplicationData = () => {
     state,
     toggleFavorite,
     onPhotoSelect,
-    closeDisplayModal
+    closeDisplayModal,
+    onTopicSelect
   };
 }
 

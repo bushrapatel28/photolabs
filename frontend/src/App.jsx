@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 // import topics from "mocks/topics";
 //import photos from 'mocks/photos';
-import HomeRoute from 'routes/HomeRoute';
 import './App.scss';
+import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import useApplicationData from 'hooks/useApplicationData';
 
@@ -15,7 +15,8 @@ const App = () => {
     state:{selectedPhoto, favorites, displayModal, photoData, topicData},
     onPhotoSelect,
     toggleFavorite,
-    closeDisplayModal
+    closeDisplayModal,
+    onTopicSelect
   } = useApplicationData(); 
 
   return (
@@ -26,6 +27,7 @@ const App = () => {
         favorites={favorites}
         toggleFavorite={toggleFavorite}
         onPhotoSelect={onPhotoSelect}
+        onTopicSelect={onTopicSelect}
       />
       {displayModal 
       && <PhotoDetailsModal 
