@@ -14,8 +14,7 @@ const PhotoDetailsModal = (props) => {
   } = props.selectedPhoto;
 
   const similarPhotosArray = Object.values(props.selectedPhoto.similar_photos);
-
-
+  
   return (
     <div className="photo-details-modal">
       <button 
@@ -49,7 +48,7 @@ const PhotoDetailsModal = (props) => {
         <div className='photo-details-modal__header'>
           Similar Photos
         </div>
-        <PhotoList 
+        <PhotoList
           photos={similarPhotosArray}
           favorites={props.favorites}
           toggleFavorite={props.toggleFavorite}

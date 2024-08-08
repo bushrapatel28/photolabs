@@ -1,4 +1,3 @@
-import App from 'App';
 import React, { useReducer, useEffect } from 'react';
 
 export const ACTIONS = {
@@ -72,7 +71,7 @@ const useApplicationData = () => {
     dispatch({type, payload: newFavs});
   }
 
-  const onPhotoSelect = (selectedPhoto) => {   
+  const onPhotoSelect = (selectedPhoto) => {
     dispatch({type: ACTIONS.SELECT_PHOTO, payload: selectedPhoto});
     dispatch({type: ACTIONS.DISPLAY_PHOTO_DETAILS});
   }

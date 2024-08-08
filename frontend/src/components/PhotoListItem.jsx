@@ -25,7 +25,6 @@ const PhotoListItem = (props) => {
           className="photo-list__image"
           onClick={props.onClick}
         />
-        {/* <img src={urls.full} alt="Enlarged-Photo" className="photo-list__image"/> */}
         <div className="photo-list__user-details">
           <img src={user.profile} alt="Profile-Photo" className="photo-list__user-profile"/>
           <div className="photo-list__user-info">

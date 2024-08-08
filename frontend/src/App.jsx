@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-// import topics from "mocks/topics";
-//import photos from 'mocks/photos';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
