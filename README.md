@@ -1,12 +1,6 @@
-# react-photolabs
-
-The PhotoLabs project for the Web Development React course programming.
-
 # Photolabs
 
 PhotoLabs is a React-based single-page application (SPA) that allows users to view photos in different contexts. We will use a pre-existing API to build a frontend user experience for users to interact with photos!
-
-Users can view a list of various photos on the home page along with a list of photo categories to select from in the navigation bar. Users can click on a photo to view a larger version of the photo and relevant / similar photos. They can like any photo(s) and can view a notification on the heart icon in the navigation if there are any liked photos.
 
 ## Setup
 
@@ -32,6 +26,22 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+
+## Features
+
+- Users can view a list of various photos on the home page along with a list of photo categories to select from in the navigation bar. 
+- Users can click on a photo to view a larger version of the photo and relevant / similar photos. 
+- They can like any photo(s) and can view a notification on the heart icon in the navigation if there are any liked photos.
+
+## Final Product
+
+!["Homepage"](https://github.com/bushrapatel28/photolabs/blob/main/docs/Homepage.png?raw=true)
+
+!["Enlarged Photo and Similar Photos"](https://github.com/bushrapatel28/photolabs/blob/main/docs/Enlarged%20Photo%20and%20Similar%20Photos.png?raw=true)
+
+!["Notification for liked photos"](https://github.com/bushrapatel28/photolabs/blob/main/docs/Notification%20for%20liked%20photos.png?raw=true)
+
+!["Photo Categories"](https://github.com/bushrapatel28/photolabs/blob/main/docs/Photo%20Categories.png?raw=true)
 
 ## Components Checklist
 
