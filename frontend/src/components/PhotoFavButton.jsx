@@ -10,7 +10,6 @@ function PhotoFavButton(props) {
         className="photo-list__fav-icon-svg"
         onClick={props.onClick}
       >
-        {/* Insert React */}
         <FavIcon selected={props.isFavorite} />
       </div>
     </div>

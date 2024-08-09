@@ -10,7 +10,7 @@ const PhotoListItem = (props) => {
     urls,
     user
   } = props.photoData;
-  /* Insert React */
+  
   return (
     <React.Fragment>
       <div className="photo-list__item">

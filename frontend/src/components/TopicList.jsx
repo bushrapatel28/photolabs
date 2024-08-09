@@ -6,7 +6,6 @@ import TopicListItem from "./TopicListItem";
 const TopicList = ({topics, onTopicSelect}) => {
   return (
     <div className="top-nav-bar__topic-list">
-      {/* Insert React */}
       {topics.map((topicData) => {
         return (
           <TopicListItem 

@@ -7,7 +7,6 @@ import PhotoListItem from "./PhotoListItem";
 const PhotoList = (props) => {
   return (
     <ul className="photo-list">
-      {/* Insert React */}
       {props.photos.map((photoData) => {
         return (
           <PhotoListItem 
